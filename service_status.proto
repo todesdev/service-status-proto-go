@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package service_status;
+
+option go_package = "api.todes.ru/proto/service_status";
+
+import "google/protobuf/empty.proto";
+
+message Status {
+    string status = 1;
+}
+
+service ServiceStatus {
+    rpc GetStatus (google.protobuf.Empty) returns (Status);
+}
